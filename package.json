@@ -1,6 +1,6 @@
 {
   "author": "Russ Frank <me@russfrank.us>",
-  "version": "0.0.0-5",
+  "version": "0.0.0-6",
   "scripts": {
     "start": "coffee app.coffee"
   },

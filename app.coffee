@@ -1,6 +1,7 @@
 nextbusjs = require 'nextbusjs'
 rutgers = nextbusjs.client()
 flatiron = require 'flatiron'
+request = require 'request'
 
 app = flatiron.app
 app.use flatiron.plugins.http
@@ -18,11 +19,12 @@ app.router.get '/route/:route', (route) ->
     @res.end JSON.stringify data
   ), 'both'
 
-app.router.get '/stop/:stop', (stop) ->
+app.router.get /\/stop\/(.*)/, (stop) ->
+  stop = stop.replace /%20/g, ' '
   rutgers.stopPredict stop, null, ((err, data) =>
     if err
-      @res.writehead 500, 'content-type': 'application/json'
-      @res.end json.stringify err
+      @res.writeHead 500, 'content-type': 'application/json'
+      @res.end JSON.stringify err
       return
     @res.writeHead 200, 'Content-Type': 'application/json'
     @res.end JSON.stringify data
@@ -45,7 +47,7 @@ app.router.get '/locations', ->
   rutgers.vehicleLocations null, ((err, data) =>
     if err
       @res.writehead 500, 'content-type': 'application/json'
-      @res.end json.stringify err
+      @res.end JSON.stringify err
       return
     @res.writeHead 200, 'Content-Type': 'application/json'
     @res.end JSON.stringify data
@@ -55,9 +57,11 @@ setInterval (->
   rutgers.guessActive ->
 ), 120000
 
-rutgers.cacheAgency 'rutgers', (err) ->
+request 'https://rumobile.rutgers.edu/0.1/rutgersrouteconfig.txt', (err, response, body) ->
   if err then return console.dir err
+  rutgers.setAgencyCache (JSON.parse body), 'rutgers'
   rutgers.guessActive ->
     console.log 'listening'
     app.start 3000
+
 
