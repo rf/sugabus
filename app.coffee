@@ -43,6 +43,10 @@ app.router.get '/nearby/:lat/:lon', (lat, lon) ->
   @res.writeHead 200, 'Content-Type': 'application/json'
   @res.end JSON.stringify stops
 
+app.router.get '/config', ->
+  @res.writeHead 200, 'Content-Type': 'application/json'
+  @res.end JSON.stringify rutgers.getAgencyCache()
+
 rutgers.cacheAgency 'rutgers', (err) ->
   if err then return console.dir err
   console.log 'listening'
