@@ -7,7 +7,8 @@ app = flatiron.app
 app.use flatiron.plugins.http
 
 app.router.get '/', (req, res) ->
-  res.send 'hello'
+  @res.writeHead 200, 'Content-Type': 'application/json'
+  @res.end 'Docs available at: api.rutgers.edu'
 
 app.router.get '/route/:route', (route) ->
   rutgers.routePredict route, null, ((err, data) =>
