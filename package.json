@@ -1,11 +1,26 @@
 {
-   "author": "Russ Frank <me@russfrank.us>",
-   "version": "0.0.0",
-   "scripts": {
-      "start": "node app.js"
-   },
-   "name": "nextbus",
-   "engines": {
-      "node": "v0.6.x"
-   }
+  "author": "Russ Frank <me@russfrank.us>",
+  "version": "0.0.0-3",
+  "scripts": {
+    "start": "coffee app.coffee"
+  },
+  "name": "nextbus",
+  "engines": {
+    "node": "v0.6.x"
+  },
+  "dependencies": {
+    "flatiron": "0.1.x",
+    "shelljs": "0.0.x",
+    "coffee-script": "1.3.x",
+    "semver": "1.0.x",
+    "d8": "0.2.x",
+    "cliff": "0.1.x",
+    "request": "2.9.x",
+    "async": "0.1.x",
+    "colors": "0.6.x",
+    "underscore": "1.3.x",
+    "nextbusjs": "0.0.x",
+    "union": "0.3.x"
+  },
+  "subdomain": "nextbus"
 }
