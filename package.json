@@ -1,0 +1,11 @@
+{
+   "author": "Russ Frank <me@russfrank.us>",
+   "version": "0.0.0",
+   "scripts": {
+      "start": "node app.js"
+   },
+   "name": "nextbus",
+   "engines": {
+      "node": "v0.6.x"
+   }
+}
