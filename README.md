@@ -3,7 +3,7 @@ This is an extremely simple wrapper API around [nextbusjs](https://github.com/ru
 for people who don't want to use javascript.  It is currently hosted on
 nodejitsu.
 
-The base URL is: nextbus.nodejitsu.com
+The base URL is: runextbus.heroku.com
 
 <table class="table">                                                          
    <thead>                                                                      
