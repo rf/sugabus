@@ -2,7 +2,7 @@
   "author": "Russ Frank <me@russfrank.us>",
   "version": "0.0.0-8",
   "scripts": {
-    "start": "coffee app.coffee"
+    "start": "node boot.js"
   },
   "name": "nextbus",
   "engines": {
