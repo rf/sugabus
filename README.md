@@ -1,7 +1,7 @@
 # Sugabus
 This is an extremely simple wrapper API around [nextbusjs](https://github.com/russfrank/nextbusjs)
 for people who don't want to use javascript.  It is currently hosted on
-nodejitsu.
+heroku.
 
 The base URL is: runextbus.heroku.com
 
