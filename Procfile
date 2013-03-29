@@ -1,1 +1,1 @@
-web: node boot.js
+web: coffee app.coffee
