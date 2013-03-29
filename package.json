@@ -6,7 +6,7 @@
   },
   "name": "nextbus",
   "engines": {
-    "node": "v0.6.x"
+    "node": "v0.8.x"
   },
   "dependencies": {
     "flatiron": "0.1.x",
