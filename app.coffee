@@ -63,7 +63,7 @@ request 'https://rumobile.rutgers.edu/0.1/rutgersrouteconfig.txt', (err, respons
   if err then return console.dir err
   rutgers.setAgencyCache (JSON.parse body), 'rutgers'
   rutgers.guessActive ->
-    console.log 'listening port ' + process.env.PORT || 3000
+    console.log 'listening port ' + (process.env.PORT || 3000)
     app.start process.env.PORT || 3000
 
 
